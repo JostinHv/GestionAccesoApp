@@ -14,10 +14,12 @@
 
 
     <string name="registro_accesos">Registro de Accesos</string>
+    <string name="admin_registros">Registros - Administrador</string>
     <string name="inicio_docente">Inicio</string>
     <string name="historial">Historial</string>
     <string name="tarjetas">Tarjetas</string>
     <string name="soporte">Soporte</string>
+    <string name="logout">Cerrar Sesión</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

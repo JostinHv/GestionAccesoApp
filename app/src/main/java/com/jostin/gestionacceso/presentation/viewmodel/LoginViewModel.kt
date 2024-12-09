@@ -27,10 +27,9 @@ class LoginViewModel : ViewModel() {
             CoroutineScope(Dispatchers.Main).launch {
                 when (result) {
                     is Resource.Success -> {
-
                         if (result.data.role == "admin") {
                             _loginResult.value = LoginResult.Admin
-                        } else if (result.data?.role == "docente") {
+                        } else if (result.data.role == "docente") {
                             println("Es docente")
                             _loginResult.value = LoginResult.Teacher
                         }

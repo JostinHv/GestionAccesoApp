@@ -105,6 +105,14 @@ class DocenteMainFragment : Fragment() {
                 R.id.nav_historial -> HistorialFragment()
                 //R.id.nav_tarjetas -> TarjetasFragment() // Fragmento para "Tarjetas"
                 //R.id.nav_soporte -> SoporteFragment()   // Fragmento para "Soporte"
+                R.id.nav_logout -> {
+                    // Aquí es donde volvemos al LoginFragment
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, LoginFragment.newInstance())
+                        .commitAllowingStateLoss()
+                    navController.navigate(R.id.loginFragment)
+                    return@setNavigationItemSelectedListener true
+                }
                 else -> null
             }
 
@@ -136,5 +144,10 @@ class DocenteMainFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        // Restaurar la visibilidad de los elementos al salir del LoginFragment
+        (activity as? AppCompatActivity)?.apply {
+            findViewById<DrawerLayout>(R.id.drawer_layout)?.visibility = View.VISIBLE
+            findViewById<Toolbar>(R.id.toolbar)?.visibility = View.VISIBLE
+        }
     }
 }

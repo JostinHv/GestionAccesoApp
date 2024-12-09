@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -27,8 +30,11 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        println("Se creo la vista")
-
+        // Esconde el DrawerLayout y Toolbar si es necesario
+        (activity as? AppCompatActivity)?.apply {
+            findViewById<DrawerLayout>(R.id.drawer_layout)?.visibility = View.GONE
+            findViewById<Toolbar>(R.id.toolbar)?.visibility = View.GONE
+        }
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -49,7 +55,7 @@ class LoginFragment : Fragment() {
             when (result) {
                 is LoginResult.Admin -> {
                     // Navegar al panel de administrador
-                    //findNavController().navigate(R.id.action_loginFragment_to_teacherDashboardFragment)
+                    findNavController().navigate(R.id.action_login_to_admin)
                 }
                 is LoginResult.Teacher -> {
                     // Navegar al panel de docente
@@ -66,5 +72,11 @@ class LoginFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        fun newInstance(): Fragment {
+            return LoginFragment()
+        }
     }
 }
