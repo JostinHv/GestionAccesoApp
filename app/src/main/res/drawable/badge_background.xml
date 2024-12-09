@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo con un color de fondo -->
+    <solid android:color="#e5e7eb" />
+
+    <!-- Bordes redondeados -->
+    <corners android:radius="6dp" />
+
+    <!-- Opcional: Sombra (puedes eliminar esto si no lo necesitas) -->
+    <elevation android:value="4dp" />
+</shape>
