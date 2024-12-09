@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.jostin.gestionacceso.presentation.ui.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_to_docente"
+            app:destination="@id/teacherFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/teacherFragment"
+        android:name="com.jostin.gestionacceso.presentation.ui.DocenteMainFragment"
+        tools:layout="@layout/fragment_docente_main">
+        <!-- Acción para navegar a NfcFragment -->
+        <action
+            android:id="@+id/action_teacherFragment_to_NfcFragment"
+            app:destination="@id/NfcFragment" />
+
+        <!-- Acción para navegar a HistorialFragment -->
+        <action
+            android:id="@+id/action_teacherFragment_to_HistorialFragment"
+            app:destination="@id/HistorialFragment" />
+    </fragment>
+
+    <!-- Fragmento Nfc -->
+    <fragment
+        android:id="@+id/NfcFragment"
+        android:name="com.jostin.gestionacceso.presentation.ui.NfcFragment"
+        android:label="NFC Fragment"
+        tools:layout="@layout/fragment_nfc"/>
+
+    <!-- Fragmento Historial -->
+    <fragment
+        android:id="@+id/HistorialFragment"
+        android:name="com.jostin.gestionacceso.presentation.ui.HistorialFragment"
+        android:label="Historial Fragment"
+        tools:layout="@layout/fragment_historial"/>
+
+
+</navigation>
+
+
+
+
+

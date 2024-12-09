@@ -1,0 +1,64 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp">
+
+    <!-- Lab -->
+    <TextView
+        android:id="@+id/labText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lab 1"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Course -->
+    <TextView
+        android:id="@+id/courseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Name"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labText"/>
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2024-12-08"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/courseText"/>
+
+    <!-- Entrada Time -->
+    <TextView
+        android:id="@+id/entradaTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrada: 10:27:03"
+        android:textSize="12sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateText"/>
+
+    <!-- Salida Time -->
+    <TextView
+        android:id="@+id/salidaTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salida: En curso"
+        android:textSize="12sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entradaTime"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
